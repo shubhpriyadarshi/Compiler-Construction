@@ -1,0 +1,45 @@
+Grammar rules:
+                                                                                  
+<prog> -> <funct><prog> | <funct> 
+<funct> -> dtype id (<param>){ <stmt_list> }
+<param> -> id,<param> | id | e
+<stmt_list> -> <stmt><stmt_list> | <stmt>
+
+/* Declaration statements */
+<stmt> -> dtype var <variables>;
+<variables> -> id,<variables> | id 
+<stmt> -> dtype <arr>
+<arr> -> id[int]
+
+
+/* Assignment statements */
+<stmt> -> id := <expr>
+
+
+/* Conditional statements */
+
+<stmt> -> <if_stmt>
+<if_stmt> -> if ( <expr> ) { <stmt_list> } <else_stmts>
+<else_stmts> -> <else_t1> <else_t2>
+<else_t1> -> elsif ( <expr> ) { <stmt_list> } | e
+<else_t2> -> else { <stmt_list> } 
+
+/* Looping statements */
+
+<stmt> -> for ( <expr> ; <expr> ; <expr> ){ <stmt_list> }
+<stmt> -> while( <expr> ) { <stmt_list> }
+
+/* Print statements */
+
+<stmt> -> print( <print_stmts> );
+<print_stmts> -> id | <literals>
+<literals> -> int|str|bool|float
+
+/* Return statement */
+
+<stmt> -> return <ret_exp> ;
+<ret_exp> -> <expr> | e
+
+<expr> -> id | <literals> | ( <expr> op <expr> )
+
+
