@@ -1,5 +1,10 @@
 int main(){
    int arr[20];
+   int 5arr[5]; %% should give error
+   int x;
+   x:= 3*9/9+2-2-2+10;
+   string s = "hello\nhi"; %% error
+   
    return;
 
 }

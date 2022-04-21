@@ -1,4 +1,16 @@
 main(){
 int a,b;
+a:=5;
+if(a==10){
+  b:=1;
+}
+elsif(a==2){
+  b:=0;
+}
+else{
+  int c;
+  c := a;
+  print("Value of c = %d" , c);
+}
 return;
 }
