@@ -462,6 +462,31 @@ vector<string> get_rules()
     return rules;
 }
 
+map<string, string> legit_T()
+{
+    map<string, string> match;
+    match["S"] = "$";
+    match["PROG"] = "$";
+    match["MAIN"] = "$";
+    match["FUNCT"] = "main";
+    match["FUNCTS"] = "main";
+    match["PARAM"] = ")";
+    match["STMT_LIST"] = "}";
+    match["STMT"] = ";";
+    match["VARIABLES"] = ";";
+    match["ARR"] = ";";
+    match["IF_STMT"] = "}";
+    match["ELSE_STMT"] = "}";
+    match["PRINT_STMTS"] = ";";
+    match["DTYPE"] = "id";
+    match["ARGS"] = ")";
+    match["RET_EXP"] = ";";
+    match["EXPR"] = ";";
+    match["ARITH_OP"] = "id";
+    match["REL_OP"] = "id";
+    return match;
+}
+
 // parser to call the lexer function
 int main()
 {
@@ -471,6 +496,8 @@ int main()
     vector<string> rules = get_rules();
     st.push("0");
     int ptr = 0;
+    vector<string> NT = {"S", "PROG", "MAIN", "FUNCT", "FUNCTS", "PARAM", "STMT_LIST", "STMT", "VARIABLES", "ARR", "IF_STMT", "ELSE_STMT", "PRINT_STMTS", "DTYPE", "ARGS", "RET_EXP", "EXPR", "ARITH_OP", "REL_OP"};
+    map<string, string> match = legit_T();
     while (ptr < token_Set.size())
     {
         stack<string> tmp = st;
@@ -478,6 +505,54 @@ int main()
         token tk = token_Set[ptr];
         int tk_no = tk.tk_no;
         string input = symbol_table[tk_no];
+        if (parse_table.find({stoi(st.top()), input}) == parse_table.end())
+        {
+            // Error detected when parse table has empty entry
+            cout << "***************" << endl;
+            cout << "* PARSE ERROR *" << endl;
+            cout << "***************" << endl;
+            cout << "=================================================================" << endl;
+            string match_NT, match_terminal;
+            int state;
+            int matched = 0;
+            while (1)
+            {
+                string t1 = st.top();
+                st.pop();
+                if (t1[0] < '0' || t1[0] > '9')
+                {
+                    continue;
+                }
+                int flg = 0;
+                for (auto i : NT)
+                {
+                    if (parse_table.find({stoi(t1), i}) != parse_table.end())
+                    {
+                        match_NT = i;
+                        state = stoi(t1);
+                        st.push(t1);
+                        st.push(match_NT);
+                        flg = 1;
+                        break;
+                    }
+                }
+                if (flg)
+                {
+                    matched = 1;
+                    break;
+                }
+            }
+            if (matched)
+            {
+                match_terminal = match[match_NT];
+                while (symbol_table[token_Set[ptr].tk_no] != match_terminal)
+                {
+                    ptr++;
+                }
+                st.push(to_string(parse_table[{state, match_NT}].second));
+                continue;
+            }
+        }
         pair<char, int> action = parse_table[{stoi(st.top()), input}];
         cout << "Input token : " << tk.lexeme << endl;
         cout << "Stack state : ";
@@ -487,10 +562,15 @@ int main()
             tmp.pop();
         }
         cout << endl;
-        cout << "Action : " << action.first << action.second << endl;
+        if (action.first != 'a')
+        {
+            cout << "Action : " << action.first << action.second << endl;
+        }
 
         if (action.first == 'a')
         {
+            cout << "Action : "
+                 << "acc" << endl;
             cout << "ACCEPTED" << endl;
             break;
         }
