@@ -1,45 +1,59 @@
-Grammar rules:
-                                                                                  
-<prog> -> <funct><prog> | <funct> 
-<funct> -> dtype id (<param>){ <stmt_list> }
-<param> -> id,<param> | id | e
-<stmt_list> -> <stmt><stmt_list> | <stmt>
+S -> PROG
+PROG -> FUNCTS MAIN 
+MAIN -> main ( ) { STMT_LIST } 
+FUNCT -> DTYPE id ( PARAM ) { STMT_LIST }
+FUNCTS -> FUNCT FUNCTS
+FUNCTS -> ''
+PARAM -> id , PARAM 
+PARAM -> id 
+PARAM -> ''
+STMT_LIST -> STMT STMT_LIST 
+STMT_LIST -> STMT
 
-/* Declaration statements */
-<stmt> -> dtype var <variables>;
-<variables> -> id,<variables> | id 
-<stmt> -> dtype <arr>
-<arr> -> id[int]
-
-
-/* Assignment statements */
-<stmt> -> id := <expr>
-
-
-/* Conditional statements */
-
-<stmt> -> <if_stmt>
-<if_stmt> -> if ( <expr> ) { <stmt_list> } <else_stmts>
-<else_stmts> -> <else_t1> <else_t2>
-<else_t1> -> elsif ( <expr> ) { <stmt_list> } | e
-<else_t2> -> else { <stmt_list> } 
-
-/* Looping statements */
-
-<stmt> -> for ( <expr> ; <expr> ; <expr> ){ <stmt_list> }
-<stmt> -> while( <expr> ) { <stmt_list> }
-
-/* Print statements */
-
-<stmt> -> print( <print_stmts> );
-<print_stmts> -> id | <literals>
-<literals> -> int|str|bool|float
-
-/* Return statement */
-
-<stmt> -> return <ret_exp> ;
-<ret_exp> -> <expr> | e
-
-<expr> -> id | <literals> | ( <expr> op <expr> )
+STMT -> DTYPE VARIABLES ;
+VARIABLES -> id , VARIABLES
+VARIABLES -> id 
+STMT -> DTYPE ARR ;
+ARR -> id [ num ]
 
 
+STMT -> id := EXPR ;
+
+
+
+STMT -> IF_STMT
+IF_STMT -> if ( EXPR ) { STMT_LIST } ELSE_STMT
+ELSE_STMT -> else { STMT_LIST }
+ELSE_STMT -> ''
+
+
+STMT -> for ( EXPR ; EXPR ; EXPR ) { STMT_LIST }
+STMT -> while ( EXPR ) { STMT_LIST }
+
+
+STMT -> print ( PRINT_STMTS ) ;
+PRINT_STMTS -> id 
+DTYPE -> int
+DTYPE -> string
+DTYPE -> float
+
+
+STMT -> id ( ARGS ) ;
+ARGS -> id , ARGS 
+ARGS -> id
+ARGS -> ''
+STMT -> return RET_EXP ;
+RET_EXP -> EXPR 
+RET_EXP -> ''
+
+EXPR -> id
+EXPR -> num
+EXPR -> id ARITH_OP id
+EXPR -> id REL_OP id
+ARITH_OP -> +
+ARITH_OP -> -
+ARITH_OP -> *
+ARITH_OP -> /
+REL_OP -> <
+REL_OP -> >
+REL_OP -> ==
