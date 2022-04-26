@@ -416,6 +416,9 @@ int scanTokens()
         fout << "Token " << tk.tk_no << ", string \"" << tk.lexeme << "\", line number " << tk.lc << "\n";
     }
 
+    token_Set.push_back(newtk(-1, "$", -1));
+    symbol_table[-1] = "$";
+
     fin.close();
     fout.close();
     return 0;

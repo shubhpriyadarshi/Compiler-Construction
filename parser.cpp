@@ -409,22 +409,130 @@ map<pair<int, string>, pair<char, int>> populate_parse_table()
     return mp;
 }
 
+vector<string> get_rules()
+{
+    vector<string> rules(50);
+    rules[0] = "S -> PROG";
+    rules[1] = "PROG -> FUNCTS MAIN";
+    rules[2] = "MAIN -> main ( ) { STMT_LIST }";
+    rules[3] = "FUNCT -> DTYPE id ( PARAM ) { STMT_LIST }";
+    rules[4] = "FUNCTS -> FUNCT FUNCTS";
+    rules[5] = "FUNCTS -> ''";
+    rules[6] = "PARAM -> id , PARAM";
+    rules[7] = "PARAM -> id";
+    rules[8] = "PARAM -> ''";
+    rules[9] = "STMT_LIST -> STMT STMT_LIST";
+    rules[10] = "STMT_LIST -> STMT";
+    rules[11] = "STMT -> DTYPE VARIABLES ;";
+    rules[12] = "VARIABLES -> id , VARIABLES";
+    rules[13] = "VARIABLES -> id";
+    rules[14] = "STMT -> DTYPE ARR ;";
+    rules[15] = "ARR -> id [ num ]";
+    rules[16] = "STMT -> id := EXPR ;";
+    rules[17] = "STMT -> IF_STMT";
+    rules[18] = "IF_STMT -> if ( EXPR ) { STMT_LIST } ELSE_STMT";
+    rules[19] = "ELSE_STMT -> else { STMT_LIST }";
+    rules[20] = "ELSE_STMT -> ''";
+    rules[21] = "STMT -> for ( EXPR ; EXPR ; EXPR ) { STMT_LIST }";
+    rules[22] = "STMT -> while ( EXPR ) { STMT_LIST }";
+    rules[23] = "STMT -> print ( PRINT_STMTS ) ;";
+    rules[24] = "PRINT_STMTS -> id";
+    rules[25] = "DTYPE -> int";
+    rules[26] = "DTYPE -> string";
+    rules[27] = "DTYPE -> float";
+    rules[28] = "STMT -> id ( ARGS ) ;";
+    rules[29] = "ARGS -> id , ARGS";
+    rules[30] = "ARGS -> id";
+    rules[31] = "ARGS -> ''";
+    rules[32] = "STMT -> return RET_EXP ;";
+    rules[33] = "RET_EXP -> EXPR";
+    rules[34] = "RET_EXP -> ''";
+    rules[35] = "EXPR -> id";
+    rules[36] = "EXPR -> num";
+    rules[37] = "EXPR -> id ARITH_OP EXPR";
+    rules[38] = "EXPR -> id REL_OP EXPR";
+    rules[39] = "ARITH_OP -> +";
+    rules[40] = "ARITH_OP -> -";
+    rules[41] = "ARITH_OP -> *";
+    rules[42] = "ARITH_OP -> /";
+    rules[43] = "REL_OP -> <";
+    rules[44] = "REL_OP -> >";
+    rules[45] = "REL_OP -> ==";
+
+    return rules;
+}
+
 // parser to call the lexer function
 int main()
 {
     scanTokens();
-
-    for (token tk : token_Set)
+    map<pair<int, string>, pair<char, int>> parse_table = populate_parse_table();
+    stack<string> st;
+    vector<string> rules = get_rules();
+    st.push("0");
+    int ptr = 0;
+    while (ptr < token_Set.size())
     {
+        stack<string> tmp = st;
+
+        token tk = token_Set[ptr];
         int tk_no = tk.tk_no;
-        cout << symbol_table[tk_no] << endl;
+        string input = symbol_table[tk_no];
+        pair<char, int> action = parse_table[{stoi(st.top()), input}];
+        cout << "Input token : " << tk.lexeme << endl;
+        cout << "Stack state : ";
+        while (!tmp.empty())
+        {
+            cout << tmp.top() << " ";
+            tmp.pop();
+        }
+        cout << endl;
+        cout << "Action : " << action.first << action.second << endl;
+
+        if (action.first == 'a')
+        {
+            cout << "ACCEPTED" << endl;
+            break;
+        }
+        cout << "=================================================================" << endl;
+        if (action.first == 's')
+        {
+            st.push(input);
+            st.push(to_string(action.second));
+            ptr++;
+        }
+        if (action.first == 'r')
+        {
+            string rule = rules[action.second];
+            vector<string> v;
+            stringstream ss(rule);
+            string word;
+            int cou = 0;
+            while (ss >> word)
+            {
+                v.push_back(word);
+                if (word != "''")
+                {
+                    cou++;
+                }
+            }
+            int tmp = 2 * (cou - 2);
+            while (tmp--)
+            {
+                st.pop();
+            }
+            int nm = stoi(st.top());
+            st.push(v[0]);
+            pair<char, int> nxt_action = parse_table[{nm, v[0]}];
+            st.push(to_string(nxt_action.second));
+        }
     }
     // structure of algorithm
     /*
     stack<string> st;
     |    |
-    | 0  |<-- INITIAL STACK
-    |_$__|
+    |    |
+    |_0__|<--INITIAL
     while(Scan the tokens){
         if(mp.find({stoi(st.top()),token}).find()==mp.end()){
             Report and call Errror routine
