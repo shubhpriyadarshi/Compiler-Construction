@@ -486,11 +486,26 @@ map<string, string> legit_T()
     match["REL_OP"] = "id";
     return match;
 }
+ofstream fout1;
+
+void Error_routine(string err_file, string lexeme, int lc)
+{
+    cout << "***************" << endl;
+    cout << "* PARSE ERROR *" << endl;
+    cout << "***************" << endl;
+    cout << "=================================================================" << endl;
+    fout1 << "Syntax error : Line number " << lc << " due to " << lexeme << endl;
+}
 
 // parser to call the lexer function
 int main()
 {
-    scanTokens();
+    scanTokens("C:/Users/BITS-PC/Desktop/Compiler Project/TC_parser/tc_5.txt", "C:/Users/BITS-PC/Desktop/Compiler Project/TC_lexer/tc_parse.txt");
+    ofstream fout;
+    fout.open("C:/Users/BITS-PC/Desktop/Compiler Project/TC_parser/tc_5_op.txt");
+    string err_file = "C:/Users/BITS-PC/Desktop/Compiler Project/TC_parser/tc_5_err.txt";
+    fout1.open(err_file);
+
     map<pair<int, string>, pair<char, int>> parse_table = populate_parse_table();
     stack<string> st;
     vector<string> rules = get_rules();
@@ -508,10 +523,7 @@ int main()
         if (parse_table.find({stoi(st.top()), input}) == parse_table.end())
         {
             // Error detected when parse table has empty entry
-            cout << "***************" << endl;
-            cout << "* PARSE ERROR *" << endl;
-            cout << "***************" << endl;
-            cout << "=================================================================" << endl;
+            Error_routine(err_file, tk.lexeme, tk.lc);
             string match_NT, match_terminal;
             int state;
             int matched = 0;
@@ -555,16 +567,24 @@ int main()
         }
         pair<char, int> action = parse_table[{stoi(st.top()), input}];
         cout << "Input token : " << tk.lexeme << endl;
+        fout << "Input token : " << tk.lexeme << endl;
+
         cout << "Stack state : ";
+        fout << "Stack state : ";
+
         while (!tmp.empty())
         {
             cout << tmp.top() << " ";
+            fout << tmp.top() << " ";
             tmp.pop();
         }
         cout << endl;
+        fout << endl;
+
         if (action.first != 'a')
         {
             cout << "Action : " << action.first << action.second << endl;
+            fout << "Action : " << action.first << action.second << endl;
         }
 
         if (action.first == 'a')
@@ -572,9 +592,14 @@ int main()
             cout << "Action : "
                  << "acc" << endl;
             cout << "ACCEPTED" << endl;
+            fout << "Action : "
+                 << "acc" << endl;
+            fout << "ACCEPTED" << endl;
             break;
         }
         cout << "=================================================================" << endl;
+        fout << "=================================================================" << endl;
+
         if (action.first == 's')
         {
             st.push(input);

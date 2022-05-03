@@ -287,12 +287,12 @@ void scanStringliterals(string line, int *idx, int lc)
     (*idx)++;
 }
 
-int scanTokens()
+int scanTokens(string fname1, string fname2)
 {
     ifstream fin;  // input file stream
     ofstream fout; // output file stream
-    fin.open("C:/Users/BITS-PC/Desktop/Compiler Project/TC/tc_2.txt");
-    fout.open("C:/Users/BITS-PC/Desktop/Compiler Project/TC/tc_2_op.txt");
+    fin.open(fname1);
+    fout.open(fname2);
     int lc = 0; // maintains line number count
     string line;
     while (getline(fin, line))
