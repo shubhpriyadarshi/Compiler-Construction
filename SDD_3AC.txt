@@ -1,0 +1,10 @@
+SDD for Arithmetic Expressions
+
+S -> id := E { S.code := E.code || gencode(id ':=' E.temp }
+E -> E + E   { E.Temp = newTemp(); E.code = E1.code || E2.code || gencode(E.Temp ':=' E1.Temp '+' E2.Temp) }
+E -> E - E   { E.Temp = newTemp(); E.code = E1.code || E2.code || gencode(E.Temp ':=' E1.Temp '-' E2.Temp) }
+E -> E * E   { E.Temp = newTemp(); E.code = E1.code || E2.code || gencode(E.Temp ':=' E1.Temp '*' E2.Temp) }
+E -> E / E   { E.Temp = newTemp(); E.code = E1.code || E2.code || gencode(E.Temp ':=' E1.Temp '/' E2.Temp) }
+E -> - E     { E.Temp = newTemp(); E.code = E1.code || gencode(E.Temp ':=' 'uminus' E1.Temp) }
+E -> ( E )   { E.Temp = E1.Temp; E.code = E1.code }
+E -> id      { E.Temp := id.Temp; E.code = ""}
