@@ -1,0 +1,2 @@
+Syntax error : Line number 4 due to int
+Syntax error : Line number 17 due to +

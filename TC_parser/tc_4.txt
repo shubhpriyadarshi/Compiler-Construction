@@ -1,0 +1,7 @@
+main(){
+  
+   %% Parse error
+   b := b ++ c;
+
+
+}

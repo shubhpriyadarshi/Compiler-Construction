@@ -1,0 +1,76 @@
+Input token : main
+Stack state : 0 
+Action : r5
+=================================================================
+Input token : main
+Stack state : 2 FUNCTS 0 
+Action : s9
+=================================================================
+Input token : (
+Stack state : 9 main 2 FUNCTS 0 
+Action : s12
+=================================================================
+Input token : )
+Stack state : 12 ( 9 main 2 FUNCTS 0 
+Action : s14
+=================================================================
+Input token : {
+Stack state : 14 ) 12 ( 9 main 2 FUNCTS 0 
+Action : s17
+=================================================================
+Input token : b
+Stack state : 17 { 14 ) 12 ( 9 main 2 FUNCTS 0 
+Action : s23
+=================================================================
+Input token : :=
+Stack state : 23 id 17 { 14 ) 12 ( 9 main 2 FUNCTS 0 
+Action : s37
+=================================================================
+Input token : b
+Stack state : 37 := 23 id 17 { 14 ) 12 ( 9 main 2 FUNCTS 0 
+Action : s44
+=================================================================
+Input token : +
+Stack state : 44 id 37 := 23 id 17 { 14 ) 12 ( 9 main 2 FUNCTS 0 
+Action : s62
+=================================================================
+Input token : c
+Stack state : 60 ARITH_OP 44 id 37 := 23 id 17 { 14 ) 12 ( 9 main 2 FUNCTS 0 
+Action : s44
+=================================================================
+Input token : ;
+Stack state : 44 id 60 ARITH_OP 44 id 37 := 23 id 17 { 14 ) 12 ( 9 main 2 FUNCTS 0 
+Action : r35
+=================================================================
+Input token : ;
+Stack state : 80 EXPR 60 ARITH_OP 44 id 37 := 23 id 17 { 14 ) 12 ( 9 main 2 FUNCTS 0 
+Action : r37
+=================================================================
+Input token : ;
+Stack state : 52 EXPR 37 := 23 id 17 { 14 ) 12 ( 9 main 2 FUNCTS 0 
+Action : s74
+=================================================================
+Input token : }
+Stack state : 74 ; 52 EXPR 37 := 23 id 17 { 14 ) 12 ( 9 main 2 FUNCTS 0 
+Action : r16
+=================================================================
+Input token : }
+Stack state : 21 STMT 17 { 14 ) 12 ( 9 main 2 FUNCTS 0 
+Action : r10
+=================================================================
+Input token : }
+Stack state : 20 STMT_LIST 17 { 14 ) 12 ( 9 main 2 FUNCTS 0 
+Action : s32
+=================================================================
+Input token : $
+Stack state : 32 } 20 STMT_LIST 17 { 14 ) 12 ( 9 main 2 FUNCTS 0 
+Action : r2
+=================================================================
+Input token : $
+Stack state : 8 MAIN 2 FUNCTS 0 
+Action : r1
+=================================================================
+Input token : $
+Stack state : 1 PROG 0 
+Action : acc
+ACCEPTED

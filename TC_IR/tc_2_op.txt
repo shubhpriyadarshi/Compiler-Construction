@@ -1,0 +1,11 @@
+---------------------
+Intermediate code for arithmetic_expression : 
+
+t1:=b*c
+t2:=b*c
+t3:=uminus d
+t4:=c*t3
+t5:=t2-t4
+t6:=t1+t5
+a:=t6
+---------------------

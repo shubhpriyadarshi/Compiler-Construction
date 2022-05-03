@@ -1,0 +1,9 @@
+#include<stdio.h>
+
+int main(){
+  a+b+c++;
+  int*idx;
+  throw_error(name);
+  while(x--){
+  }
+}

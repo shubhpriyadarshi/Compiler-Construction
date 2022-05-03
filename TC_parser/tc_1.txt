@@ -1,0 +1,16 @@
+main(){
+
+  int a,b,c;
+  a := 2;
+  b := 3;
+  
+  if(a<b){
+    c := 0;
+  }
+  else{
+    c:= 1;
+  }
+  
+  return;
+
+}

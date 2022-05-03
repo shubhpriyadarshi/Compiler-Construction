@@ -1,0 +1,336 @@
+Input token : main
+Stack state : 0 
+Action : r5
+=================================================================
+Input token : main
+Stack state : 2 FUNCTS 0 
+Action : s9
+=================================================================
+Input token : (
+Stack state : 9 main 2 FUNCTS 0 
+Action : s12
+=================================================================
+Input token : )
+Stack state : 12 ( 9 main 2 FUNCTS 0 
+Action : s14
+=================================================================
+Input token : {
+Stack state : 14 ) 12 ( 9 main 2 FUNCTS 0 
+Action : s17
+=================================================================
+Input token : int
+Stack state : 17 { 14 ) 12 ( 9 main 2 FUNCTS 0 
+Action : s5
+=================================================================
+Input token : arr
+Stack state : 5 int 17 { 14 ) 12 ( 9 main 2 FUNCTS 0 
+Action : r25
+=================================================================
+Input token : arr
+Stack state : 22 DTYPE 17 { 14 ) 12 ( 9 main 2 FUNCTS 0 
+Action : s36
+=================================================================
+Input token : [
+Stack state : 36 id 22 DTYPE 17 { 14 ) 12 ( 9 main 2 FUNCTS 0 
+Action : s51
+=================================================================
+Input token : 6
+Stack state : 51 [ 36 id 22 DTYPE 17 { 14 ) 12 ( 9 main 2 FUNCTS 0 
+Action : s73
+=================================================================
+Input token : ]
+Stack state : 73 num 51 [ 36 id 22 DTYPE 17 { 14 ) 12 ( 9 main 2 FUNCTS 0 
+Action : s83
+=================================================================
+Input token : ;
+Stack state : 83 ] 73 num 51 [ 36 id 22 DTYPE 17 { 14 ) 12 ( 9 main 2 FUNCTS 0 
+Action : r15
+=================================================================
+Input token : ;
+Stack state : 35 ARR 22 DTYPE 17 { 14 ) 12 ( 9 main 2 FUNCTS 0 
+Action : s49
+=================================================================
+Input token : int
+Stack state : 49 ; 35 ARR 22 DTYPE 17 { 14 ) 12 ( 9 main 2 FUNCTS 0 
+Action : r14
+=================================================================
+Input token : int
+Stack state : 21 STMT 17 { 14 ) 12 ( 9 main 2 FUNCTS 0 
+Action : s5
+=================================================================
+Input token : b
+Stack state : 5 int 21 STMT 17 { 14 ) 12 ( 9 main 2 FUNCTS 0 
+Action : r25
+=================================================================
+Input token : b
+Stack state : 22 DTYPE 21 STMT 17 { 14 ) 12 ( 9 main 2 FUNCTS 0 
+Action : s36
+=================================================================
+Input token : ;
+Stack state : 36 id 22 DTYPE 21 STMT 17 { 14 ) 12 ( 9 main 2 FUNCTS 0 
+Action : r13
+=================================================================
+Input token : ;
+Stack state : 34 VARIABLES 22 DTYPE 21 STMT 17 { 14 ) 12 ( 9 main 2 FUNCTS 0 
+Action : s48
+=================================================================
+Input token : b
+Stack state : 48 ; 34 VARIABLES 22 DTYPE 21 STMT 17 { 14 ) 12 ( 9 main 2 FUNCTS 0 
+Action : r11
+=================================================================
+Input token : b
+Stack state : 21 STMT 21 STMT 17 { 14 ) 12 ( 9 main 2 FUNCTS 0 
+Action : s23
+=================================================================
+Input token : :=
+Stack state : 23 id 21 STMT 21 STMT 17 { 14 ) 12 ( 9 main 2 FUNCTS 0 
+Action : s37
+=================================================================
+Input token : 7
+Stack state : 37 := 23 id 21 STMT 21 STMT 17 { 14 ) 12 ( 9 main 2 FUNCTS 0 
+Action : s45
+=================================================================
+Input token : ;
+Stack state : 45 num 37 := 23 id 21 STMT 21 STMT 17 { 14 ) 12 ( 9 main 2 FUNCTS 0 
+Action : r36
+=================================================================
+Input token : ;
+Stack state : 52 EXPR 37 := 23 id 21 STMT 21 STMT 17 { 14 ) 12 ( 9 main 2 FUNCTS 0 
+Action : s74
+=================================================================
+Input token : int
+Stack state : 74 ; 52 EXPR 37 := 23 id 21 STMT 21 STMT 17 { 14 ) 12 ( 9 main 2 FUNCTS 0 
+Action : r16
+=================================================================
+Input token : int
+Stack state : 21 STMT 21 STMT 21 STMT 17 { 14 ) 12 ( 9 main 2 FUNCTS 0 
+Action : s5
+=================================================================
+Input token : c
+Stack state : 5 int 21 STMT 21 STMT 21 STMT 17 { 14 ) 12 ( 9 main 2 FUNCTS 0 
+Action : r25
+=================================================================
+Input token : c
+Stack state : 22 DTYPE 21 STMT 21 STMT 21 STMT 17 { 14 ) 12 ( 9 main 2 FUNCTS 0 
+Action : s36
+=================================================================
+Input token : ;
+Stack state : 36 id 22 DTYPE 21 STMT 21 STMT 21 STMT 17 { 14 ) 12 ( 9 main 2 FUNCTS 0 
+Action : r13
+=================================================================
+Input token : ;
+Stack state : 34 VARIABLES 22 DTYPE 21 STMT 21 STMT 21 STMT 17 { 14 ) 12 ( 9 main 2 FUNCTS 0 
+Action : s48
+=================================================================
+Input token : c
+Stack state : 48 ; 34 VARIABLES 22 DTYPE 21 STMT 21 STMT 21 STMT 17 { 14 ) 12 ( 9 main 2 FUNCTS 0 
+Action : r11
+=================================================================
+Input token : c
+Stack state : 21 STMT 21 STMT 21 STMT 21 STMT 17 { 14 ) 12 ( 9 main 2 FUNCTS 0 
+Action : s23
+=================================================================
+Input token : :=
+Stack state : 23 id 21 STMT 21 STMT 21 STMT 21 STMT 17 { 14 ) 12 ( 9 main 2 FUNCTS 0 
+Action : s37
+=================================================================
+Input token : 10
+Stack state : 37 := 23 id 21 STMT 21 STMT 21 STMT 21 STMT 17 { 14 ) 12 ( 9 main 2 FUNCTS 0 
+Action : s45
+=================================================================
+Input token : ;
+Stack state : 45 num 37 := 23 id 21 STMT 21 STMT 21 STMT 21 STMT 17 { 14 ) 12 ( 9 main 2 FUNCTS 0 
+Action : r36
+=================================================================
+Input token : ;
+Stack state : 52 EXPR 37 := 23 id 21 STMT 21 STMT 21 STMT 21 STMT 17 { 14 ) 12 ( 9 main 2 FUNCTS 0 
+Action : s74
+=================================================================
+Input token : while
+Stack state : 74 ; 52 EXPR 37 := 23 id 21 STMT 21 STMT 21 STMT 21 STMT 17 { 14 ) 12 ( 9 main 2 FUNCTS 0 
+Action : r16
+=================================================================
+Input token : while
+Stack state : 21 STMT 21 STMT 21 STMT 21 STMT 21 STMT 17 { 14 ) 12 ( 9 main 2 FUNCTS 0 
+Action : s26
+=================================================================
+Input token : (
+Stack state : 26 while 21 STMT 21 STMT 21 STMT 21 STMT 21 STMT 17 { 14 ) 12 ( 9 main 2 FUNCTS 0 
+Action : s40
+=================================================================
+Input token : b
+Stack state : 40 ( 26 while 21 STMT 21 STMT 21 STMT 21 STMT 21 STMT 17 { 14 ) 12 ( 9 main 2 FUNCTS 0 
+Action : s44
+=================================================================
+Input token : <
+Stack state : 44 id 40 ( 26 while 21 STMT 21 STMT 21 STMT 21 STMT 21 STMT 17 { 14 ) 12 ( 9 main 2 FUNCTS 0 
+Action : s66
+=================================================================
+Input token : c
+Stack state : 66 < 44 id 40 ( 26 while 21 STMT 21 STMT 21 STMT 21 STMT 21 STMT 17 { 14 ) 12 ( 9 main 2 FUNCTS 0 
+Action : r43
+=================================================================
+Input token : c
+Stack state : 61 REL_OP 44 id 40 ( 26 while 21 STMT 21 STMT 21 STMT 21 STMT 21 STMT 17 { 14 ) 12 ( 9 main 2 FUNCTS 0 
+Action : s44
+=================================================================
+Input token : )
+Stack state : 44 id 61 REL_OP 44 id 40 ( 26 while 21 STMT 21 STMT 21 STMT 21 STMT 21 STMT 17 { 14 ) 12 ( 9 main 2 FUNCTS 0 
+Action : r35
+=================================================================
+Input token : )
+Stack state : 81 EXPR 61 REL_OP 44 id 40 ( 26 while 21 STMT 21 STMT 21 STMT 21 STMT 21 STMT 17 { 14 ) 12 ( 9 main 2 FUNCTS 0 
+Action : r38
+=================================================================
+Input token : )
+Stack state : 56 EXPR 40 ( 26 while 21 STMT 21 STMT 21 STMT 21 STMT 21 STMT 17 { 14 ) 12 ( 9 main 2 FUNCTS 0 
+Action : s78
+=================================================================
+Input token : {
+Stack state : 78 ) 56 EXPR 40 ( 26 while 21 STMT 21 STMT 21 STMT 21 STMT 21 STMT 17 { 14 ) 12 ( 9 main 2 FUNCTS 0 
+Action : s87
+=================================================================
+Input token : print
+Stack state : 87 { 78 ) 56 EXPR 40 ( 26 while 21 STMT 21 STMT 21 STMT 21 STMT 21 STMT 17 { 14 ) 12 ( 9 main 2 FUNCTS 0 
+Action : s27
+=================================================================
+Input token : (
+Stack state : 27 print 87 { 78 ) 56 EXPR 40 ( 26 while 21 STMT 21 STMT 21 STMT 21 STMT 21 STMT 17 { 14 ) 12 ( 9 main 2 FUNCTS 0 
+Action : s41
+=================================================================
+Input token : b
+Stack state : 41 ( 27 print 87 { 78 ) 56 EXPR 40 ( 26 while 21 STMT 21 STMT 21 STMT 21 STMT 21 STMT 17 { 14 ) 12 ( 9 main 2 FUNCTS 0 
+Action : s58
+=================================================================
+Input token : )
+Stack state : 58 id 41 ( 27 print 87 { 78 ) 56 EXPR 40 ( 26 while 21 STMT 21 STMT 21 STMT 21 STMT 21 STMT 17 { 14 ) 12 ( 9 main 2 FUNCTS 0 
+Action : r24
+=================================================================
+Input token : )
+Stack state : 57 PRINT_STMTS 41 ( 27 print 87 { 78 ) 56 EXPR 40 ( 26 while 21 STMT 21 STMT 21 STMT 21 STMT 21 STMT 17 { 14 ) 12 ( 9 main 2 FUNCTS 0 
+Action : s79
+=================================================================
+Input token : ;
+Stack state : 79 ) 57 PRINT_STMTS 41 ( 27 print 87 { 78 ) 56 EXPR 40 ( 26 while 21 STMT 21 STMT 21 STMT 21 STMT 21 STMT 17 { 14 ) 12 ( 9 main 2 FUNCTS 0 
+Action : s88
+=================================================================
+Input token : b
+Stack state : 88 ; 79 ) 57 PRINT_STMTS 41 ( 27 print 87 { 78 ) 56 EXPR 40 ( 26 while 21 STMT 21 STMT 21 STMT 21 STMT 21 STMT 17 { 14 ) 12 ( 9 main 2 FUNCTS 0 
+Action : r23
+=================================================================
+Input token : b
+Stack state : 21 STMT 87 { 78 ) 56 EXPR 40 ( 26 while 21 STMT 21 STMT 21 STMT 21 STMT 21 STMT 17 { 14 ) 12 ( 9 main 2 FUNCTS 0 
+Action : s23
+=================================================================
+Input token : :=
+Stack state : 23 id 21 STMT 87 { 78 ) 56 EXPR 40 ( 26 while 21 STMT 21 STMT 21 STMT 21 STMT 21 STMT 17 { 14 ) 12 ( 9 main 2 FUNCTS 0 
+Action : s37
+=================================================================
+Input token : b
+Stack state : 37 := 23 id 21 STMT 87 { 78 ) 56 EXPR 40 ( 26 while 21 STMT 21 STMT 21 STMT 21 STMT 21 STMT 17 { 14 ) 12 ( 9 main 2 FUNCTS 0 
+Action : s44
+=================================================================
+Input token : +
+Stack state : 44 id 37 := 23 id 21 STMT 87 { 78 ) 56 EXPR 40 ( 26 while 21 STMT 21 STMT 21 STMT 21 STMT 21 STMT 17 { 14 ) 12 ( 9 main 2 FUNCTS 0 
+Action : s62
+=================================================================
+Input token : 1
+Stack state : 62 + 44 id 37 := 23 id 21 STMT 87 { 78 ) 56 EXPR 40 ( 26 while 21 STMT 21 STMT 21 STMT 21 STMT 21 STMT 17 { 14 ) 12 ( 9 main 2 FUNCTS 0 
+Action : r39
+=================================================================
+Input token : 1
+Stack state : 60 ARITH_OP 44 id 37 := 23 id 21 STMT 87 { 78 ) 56 EXPR 40 ( 26 while 21 STMT 21 STMT 21 STMT 21 STMT 21 STMT 17 { 14 ) 12 ( 9 main 2 FUNCTS 0 
+Action : s45
+=================================================================
+Input token : ;
+Stack state : 45 num 60 ARITH_OP 44 id 37 := 23 id 21 STMT 87 { 78 ) 56 EXPR 40 ( 26 while 21 STMT 21 STMT 21 STMT 21 STMT 21 STMT 17 { 14 ) 12 ( 9 main 2 FUNCTS 0 
+Action : r36
+=================================================================
+Input token : ;
+Stack state : 80 EXPR 60 ARITH_OP 44 id 37 := 23 id 21 STMT 87 { 78 ) 56 EXPR 40 ( 26 while 21 STMT 21 STMT 21 STMT 21 STMT 21 STMT 17 { 14 ) 12 ( 9 main 2 FUNCTS 0 
+Action : r37
+=================================================================
+Input token : ;
+Stack state : 52 EXPR 37 := 23 id 21 STMT 87 { 78 ) 56 EXPR 40 ( 26 while 21 STMT 21 STMT 21 STMT 21 STMT 21 STMT 17 { 14 ) 12 ( 9 main 2 FUNCTS 0 
+Action : s74
+=================================================================
+Input token : }
+Stack state : 74 ; 52 EXPR 37 := 23 id 21 STMT 87 { 78 ) 56 EXPR 40 ( 26 while 21 STMT 21 STMT 21 STMT 21 STMT 21 STMT 17 { 14 ) 12 ( 9 main 2 FUNCTS 0 
+Action : r16
+=================================================================
+Input token : }
+Stack state : 21 STMT 21 STMT 87 { 78 ) 56 EXPR 40 ( 26 while 21 STMT 21 STMT 21 STMT 21 STMT 21 STMT 17 { 14 ) 12 ( 9 main 2 FUNCTS 0 
+Action : r10
+=================================================================
+Input token : }
+Stack state : 33 STMT_LIST 21 STMT 87 { 78 ) 56 EXPR 40 ( 26 while 21 STMT 21 STMT 21 STMT 21 STMT 21 STMT 17 { 14 ) 12 ( 9 main 2 FUNCTS 0 
+Action : r9
+=================================================================
+Input token : }
+Stack state : 91 STMT_LIST 87 { 78 ) 56 EXPR 40 ( 26 while 21 STMT 21 STMT 21 STMT 21 STMT 21 STMT 17 { 14 ) 12 ( 9 main 2 FUNCTS 0 
+Action : s94
+=================================================================
+Input token : return
+Stack state : 94 } 91 STMT_LIST 87 { 78 ) 56 EXPR 40 ( 26 while 21 STMT 21 STMT 21 STMT 21 STMT 21 STMT 17 { 14 ) 12 ( 9 main 2 FUNCTS 0 
+Action : r22
+=================================================================
+Input token : return
+Stack state : 21 STMT 21 STMT 21 STMT 21 STMT 21 STMT 21 STMT 17 { 14 ) 12 ( 9 main 2 FUNCTS 0 
+Action : s28
+=================================================================
+Input token : ;
+Stack state : 28 return 21 STMT 21 STMT 21 STMT 21 STMT 21 STMT 21 STMT 17 { 14 ) 12 ( 9 main 2 FUNCTS 0 
+Action : r34
+=================================================================
+Input token : ;
+Stack state : 42 RET_EXP 28 return 21 STMT 21 STMT 21 STMT 21 STMT 21 STMT 21 STMT 17 { 14 ) 12 ( 9 main 2 FUNCTS 0 
+Action : s59
+=================================================================
+Input token : }
+Stack state : 59 ; 42 RET_EXP 28 return 21 STMT 21 STMT 21 STMT 21 STMT 21 STMT 21 STMT 17 { 14 ) 12 ( 9 main 2 FUNCTS 0 
+Action : r32
+=================================================================
+Input token : }
+Stack state : 21 STMT 21 STMT 21 STMT 21 STMT 21 STMT 21 STMT 21 STMT 17 { 14 ) 12 ( 9 main 2 FUNCTS 0 
+Action : r10
+=================================================================
+Input token : }
+Stack state : 33 STMT_LIST 21 STMT 21 STMT 21 STMT 21 STMT 21 STMT 21 STMT 17 { 14 ) 12 ( 9 main 2 FUNCTS 0 
+Action : r9
+=================================================================
+Input token : }
+Stack state : 33 STMT_LIST 21 STMT 21 STMT 21 STMT 21 STMT 21 STMT 17 { 14 ) 12 ( 9 main 2 FUNCTS 0 
+Action : r9
+=================================================================
+Input token : }
+Stack state : 33 STMT_LIST 21 STMT 21 STMT 21 STMT 21 STMT 17 { 14 ) 12 ( 9 main 2 FUNCTS 0 
+Action : r9
+=================================================================
+Input token : }
+Stack state : 33 STMT_LIST 21 STMT 21 STMT 21 STMT 17 { 14 ) 12 ( 9 main 2 FUNCTS 0 
+Action : r9
+=================================================================
+Input token : }
+Stack state : 33 STMT_LIST 21 STMT 21 STMT 17 { 14 ) 12 ( 9 main 2 FUNCTS 0 
+Action : r9
+=================================================================
+Input token : }
+Stack state : 33 STMT_LIST 21 STMT 17 { 14 ) 12 ( 9 main 2 FUNCTS 0 
+Action : r9
+=================================================================
+Input token : }
+Stack state : 20 STMT_LIST 17 { 14 ) 12 ( 9 main 2 FUNCTS 0 
+Action : s32
+=================================================================
+Input token : $
+Stack state : 32 } 20 STMT_LIST 17 { 14 ) 12 ( 9 main 2 FUNCTS 0 
+Action : r2
+=================================================================
+Input token : $
+Stack state : 8 MAIN 2 FUNCTS 0 
+Action : r1
+=================================================================
+Input token : $
+Stack state : 1 PROG 0 
+Action : acc
+ACCEPTED

@@ -1,0 +1,14 @@
+int fun(){
+   int a;
+   a := 5;
+   print(a);
+}
+
+
+main(){
+  int a;
+  fun();
+  print(a);
+  return;
+
+}

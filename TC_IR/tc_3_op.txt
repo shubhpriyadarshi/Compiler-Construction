@@ -1,0 +1,9 @@
+---------------------
+Intermediate code for arithmetic_expression : 
+
+t1:=v3-v4
+t2:=v2+t1
+t3:=v5/v6
+t4:=t2*t3
+v1:=t4
+---------------------

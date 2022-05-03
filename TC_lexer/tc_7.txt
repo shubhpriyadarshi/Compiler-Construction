@@ -1,0 +1,9 @@
+
+int main(){
+   float var valid_Id;
+   int var 9sum; %% will give error
+   int var x := -0.90r; %% error
+   int var y := 9+x;
+   string s := "hello";
+   return;
+}

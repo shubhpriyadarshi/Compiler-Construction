@@ -1,0 +1,21 @@
+%% Multiple syntax errors
+
+%%error 1: function args dont take dtype
+int fun(int x,int y){
+    return x+y;
+}
+
+main(){
+  
+  print(a);
+  
+  int z;
+  int b;
+  b := 6;
+
+  %% no unary ++ operator defined in grammar
+  z := b++ + b;    
+  
+  
+
+}

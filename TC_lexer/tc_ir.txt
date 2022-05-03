@@ -1,0 +1,9 @@
+Token 500, string "x", line number 1
+Token 700, string ":=", line number 1
+Token 500, string "y", line number 1
+Token 303, string "/", line number 1
+Token 500, string "z", line number 1
+Token 303, string "/", line number 1
+Token 500, string "w", line number 1
+Token 303, string "/", line number 1
+Token 500, string "u", line number 1

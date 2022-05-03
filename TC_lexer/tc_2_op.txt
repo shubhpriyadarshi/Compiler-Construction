@@ -1,0 +1,9 @@
+Token 500, string "out", line number 1
+Token 700, string ":=", line number 1
+Token 500, string "in1", line number 1
+Token 300, string "+", line number 1
+Token 500, string "in2", line number 1
+Token 300, string "+", line number 1
+Token 500, string "in3", line number 1
+Token 301, string "-", line number 1
+Token 500, string "in4", line number 1

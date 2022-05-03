@@ -1,0 +1,8 @@
+---------------------
+Intermediate code for arithmetic_expression : 
+
+t1:=w/u
+t2:=z/t1
+t3:=y/t2
+x:=t3
+---------------------

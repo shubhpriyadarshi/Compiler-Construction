@@ -1,0 +1,13 @@
+main(){
+  %% Array declaration
+  int arr[6];
+  int b;
+  b := 7;
+  int c;
+  c := 10;
+  while ( b<c){
+     print(b);
+     b := b+1;
+  }
+  return; 
+}
